@@ -1,0 +1,7 @@
+[2026-07-07 11:45:05.243] [info]: host:  {
+  "host": "localhost",
+  "user": "root",
+  "password": "12345678",
+  "database": "Amicell",
+  "port": 3306
+}

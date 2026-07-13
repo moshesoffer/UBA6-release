@@ -1,0 +1,244 @@
+[2026-07-08 19:01:04.631] [info]: [ee270ea6-25b0-419b-911a-d8ad0d3184b0] getTestRoutines . 
+[2026-07-08 19:01:04.666] [info]: [e62d3c76-c374-4986-91bb-8ee3f79b7283] getTestRoutines . 
+[2026-07-08 19:01:09.660] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] ==> runTest 
+[2026-07-08 19:01:09.662] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] await connection 3 
+[2026-07-08 19:01:09.663] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] connection.beginTransaction start 
+[2026-07-08 19:01:09.665] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] runTest {
+  "body": {
+    "id": "175fff21-4214-11f1-ba7c-ac45ef00059f",
+    "testName": "C-D_400mA_cut off 3.0V.1",
+    "isLocked": 0,
+    "batteryPN": "901LI-190745-2S1P-M2",
+    "batterySN": "012",
+    "cellPN": "INR18650-30Q",
+    "noCellSerial": 2,
+    "noCellParallel": 1,
+    "maxPerBattery": 8.4,
+    "maxVoltage": 4.2,
+    "ratedBatteryCapacity": 3000,
+    "channel": "A-and-B",
+    "notes": null,
+    "customer": null,
+    "workOrderNumber": null,
+    "approvedBy": null,
+    "conductedBy": null,
+    "cellSupplier": null,
+    "cellBatch": null,
+    "plan": [
+      {
+        "id": 0,
+        "type": "charge",
+        "cRate": 0.13,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": "400:absoluteMa",
+        "chargePerCell": 4.2,
+        "cutOffCurrent": "60:absoluteMa",
+        "cutOffVoltage": null,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": true,
+        "isCutOffVoltage": false,
+        "dischargeCurrent": ":absoluteMa",
+        "isDischargeLimit": false
+      },
+      {
+        "id": 1,
+        "type": "discharge",
+        "cRate": 0.17,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": ":absoluteMa",
+        "chargePerCell": null,
+        "cutOffCurrent": ":absoluteMa",
+        "cutOffVoltage": 3,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": false,
+        "isCutOffVoltage": true,
+        "dischargeCurrent": "500:absoluteMa",
+        "isDischargeLimit": false
+      },
+      {
+        "id": 2,
+        "type": "charge",
+        "cRate": 0.13,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": "400:absoluteMa",
+        "chargePerCell": 4.2,
+        "cutOffCurrent": "60:absoluteMa",
+        "cutOffVoltage": null,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": true,
+        "isCutOffVoltage": false,
+        "dischargeCurrent": ":absoluteMa",
+        "isDischargeLimit": false
+      },
+      {
+        "id": 3,
+        "type": "discharge",
+        "cRate": 0.07,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": ":absoluteMa",
+        "chargePerCell": null,
+        "cutOffCurrent": ":absoluteMa",
+        "cutOffVoltage": 3,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": false,
+        "isCutOffVoltage": true,
+        "dischargeCurrent": "200:absoluteMa",
+        "isDischargeLimit": false
+      }
+    ],
+    "ubaSNs": [
+      {
+        "ubaSN": "0",
+        "channel": "A"
+      },
+      {
+        "ubaSN": "0",
+        "channel": "B"
+      }
+    ]
+  }
+}
+[2026-07-08 19:01:09.667] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] SELECT RunningTests 
+[2026-07-08 19:01:09.670] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] resultArray.length 2 
+[2026-07-08 19:01:09.670] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] resultArray after filter - only running {
+  "runningTests": []
+}
+[2026-07-08 19:01:09.740] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] result?.affectedRows 2 2 
+[2026-07-08 19:01:09.741] [debug]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] Deleted 2 rows for "[{"ubaSN":"0","channel":"A"},{"ubaSN":"0","channel":"B"}]" parameters. 
+[2026-07-08 19:01:09.741] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] runTest finished deleteRunningTest {
+  "ubaSNs": [
+    {
+      "ubaSN": "0",
+      "channel": "A"
+    },
+    {
+      "ubaSN": "0",
+      "channel": "B"
+    }
+  ]
+}
+[2026-07-08 19:01:09.741] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] ==> checkRunningTestKeys 
+[2026-07-08 19:01:09.743] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] this is running a test for both channels 
+[2026-07-08 19:01:09.744] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] ==> Generate a UUID 
+[2026-07-08 19:01:09.744] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] ==> createRunningTest id [ea7dcbeb-a5e8-4366-ad88-4f6d87379a14] 
+[2026-07-08 19:01:09.745] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] ==> createRunningTest id [081dd29c-17af-406e-afb7-91c09d6eb5c9] 
+[2026-07-08 19:01:09.749] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] runTest finished createRunningTest {
+  "ids": [
+    "ea7dcbeb-a5e8-4366-ad88-4f6d87379a14",
+    "081dd29c-17af-406e-afb7-91c09d6eb5c9"
+  ]
+}
+[2026-07-08 19:01:09.755] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] runTest finished createReport {
+  "reportId": "8d66adb2-413c-45e6-8dd3-31110e474f9f"
+}
+[2026-07-08 19:01:09.758] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] folderPath created: C:\work\DEV\UBA6\amicell-data\reports-data\8d66adb2-413c-45e6-8dd3-31110e474f9f 
+[2026-07-08 19:01:09.762] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] runTest finished createTestResultsFile {
+  "reportId": "8d66adb2-413c-45e6-8dd3-31110e474f9f"
+}
+[2026-07-08 19:01:09.769] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] runTest finished createReport {
+  "reportId": "cb79bc11-ea63-4176-beb1-ece968810913"
+}
+[2026-07-08 19:01:09.772] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] folderPath created: C:\work\DEV\UBA6\amicell-data\reports-data\cb79bc11-ea63-4176-beb1-ece968810913 
+[2026-07-08 19:01:09.775] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] runTest finished createTestResultsFile {
+  "reportId": "cb79bc11-ea63-4176-beb1-ece968810913"
+}
+[2026-07-08 19:01:09.782] [info]: [48293b9f-c1ee-42b7-9773-e1d6d6f2fea1] runTest connection commit 
+[2026-07-08 19:01:09.783] [error]: [9901bb71-a82f-4449-82b4-616de343dd8d] Error [InstantTestResults] executing [INSERT INTO `InstantTestResults` (`id`, `runningTestID`, `timestamp`, `testState`, `testCurrentStep`, `voltage`, `current`, `temp`, `capacity`, `error`) VALUES (UUID(), ?, ?, ?, ?, ?, ?, ?, ?, ?);] [e70f0944-a456-411b-aa6f-5ddb28bceace,2026-07-08 19:01:09.754,Standby,0,7761,0,29.58902359008789,0,0] Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE) - Error: Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE)
+    at PromisePoolConnection.execute (C:\work\DEV\UBA6\web-console\server\node_modules\mysql2\lib\promise\connection.js:47:22)
+    at createModel (C:\work\DEV\UBA6\web-console\server\db\genericCRUD.js:74:63)
+    at addInstantTestResults (C:\work\DEV\UBA6\web-console\server\services\runningTestService.js:58:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async exports.addInstantTestResults (C:\work\DEV\UBA6\web-console\server\controllers\runningTestsController.js:14:3)
+[2026-07-08 19:01:09.787] [error]: [9901bb71-a82f-4449-82b4-616de343dd8d] addInstantTestResults Transaction error: Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE) - Error: Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE)
+    at PromisePoolConnection.execute (C:\work\DEV\UBA6\web-console\server\node_modules\mysql2\lib\promise\connection.js:47:22)
+    at createModel (C:\work\DEV\UBA6\web-console\server\db\genericCRUD.js:74:63)
+    at addInstantTestResults (C:\work\DEV\UBA6\web-console\server\services\runningTestService.js:58:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async exports.addInstantTestResults (C:\work\DEV\UBA6\web-console\server\controllers\runningTestsController.js:14:3)
+[2026-07-08 19:01:09.788] [error]: [9901bb71-a82f-4449-82b4-616de343dd8d] addInstantTestResults Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE) - Error: Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE)
+    at PromisePoolConnection.execute (C:\work\DEV\UBA6\web-console\server\node_modules\mysql2\lib\promise\connection.js:47:22)
+    at createModel (C:\work\DEV\UBA6\web-console\server\db\genericCRUD.js:74:63)
+    at addInstantTestResults (C:\work\DEV\UBA6\web-console\server\services\runningTestService.js:58:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async exports.addInstantTestResults (C:\work\DEV\UBA6\web-console\server\controllers\runningTestsController.js:14:3)
+[2026-07-08 19:01:16.493] [info]: [a79c933f-466d-461a-9f7d-8ed447d75d1b] this is a test on both channels, going to find the other channel running test 
+[2026-07-08 19:01:25.280] [info]: [9c928f54-b8f2-4569-a618-5fed1bcf64e8] this is a test on both channels, going to find the other channel running test 
+[2026-07-08 19:01:42.989] [info]: [28b438ed-c5e0-4a43-8b37-c7acd85e76b0] (trns)updateReportAndTestResult 
+[2026-07-08 19:01:42.991] [info]: [28b438ed-c5e0-4a43-8b37-c7acd85e76b0] updateReportAndTestResult finished updateReport 
+[2026-07-08 19:01:42.992] [info]: [28b438ed-c5e0-4a43-8b37-c7acd85e76b0] folderPath already exists: C:\work\DEV\UBA6\amicell-data\reports-data\cb79bc11-ea63-4176-beb1-ece968810913 
+[2026-07-08 19:01:42.995] [info]: [28b438ed-c5e0-4a43-8b37-c7acd85e76b0] updateReportAndTestResult finished createTestResultsFile 
+[2026-07-08 19:01:44.223] [info]: [c8d3c509-907d-4c09-adef-ec8788c11a9d] (trns)updateReportAndTestResult 
+[2026-07-08 19:01:44.225] [info]: [c8d3c509-907d-4c09-adef-ec8788c11a9d] updateReportAndTestResult finished updateReport 
+[2026-07-08 19:01:44.226] [info]: [c8d3c509-907d-4c09-adef-ec8788c11a9d] folderPath already exists: C:\work\DEV\UBA6\amicell-data\reports-data\cb79bc11-ea63-4176-beb1-ece968810913 
+[2026-07-08 19:01:44.229] [info]: [c8d3c509-907d-4c09-adef-ec8788c11a9d] updateReportAndTestResult finished createTestResultsFile 
+[2026-07-08 19:01:44.316] [info]: [586a782c-aa24-4f6e-bbb7-5b84339c0abc] (trns)updateReportAndTestResult 
+[2026-07-08 19:01:44.318] [info]: [586a782c-aa24-4f6e-bbb7-5b84339c0abc] updateReportAndTestResult finished updateReport 
+[2026-07-08 19:01:44.319] [info]: [586a782c-aa24-4f6e-bbb7-5b84339c0abc] folderPath already exists: C:\work\DEV\UBA6\amicell-data\reports-data\8d66adb2-413c-45e6-8dd3-31110e474f9f 
+[2026-07-08 19:01:44.322] [info]: [586a782c-aa24-4f6e-bbb7-5b84339c0abc] updateReportAndTestResult finished createTestResultsFile 
+[2026-07-08 19:01:45.482] [info]: [315432cb-97c6-4ca7-90e8-a82b631e17a1] (trns)updateReportAndTestResult 
+[2026-07-08 19:01:45.484] [info]: [315432cb-97c6-4ca7-90e8-a82b631e17a1] updateReportAndTestResult finished updateReport 
+[2026-07-08 19:01:45.485] [info]: [315432cb-97c6-4ca7-90e8-a82b631e17a1] folderPath already exists: C:\work\DEV\UBA6\amicell-data\reports-data\8d66adb2-413c-45e6-8dd3-31110e474f9f 
+[2026-07-08 19:01:45.489] [info]: [315432cb-97c6-4ca7-90e8-a82b631e17a1] updateReportAndTestResult finished createTestResultsFile 
+[2026-07-08 19:59:36.998] [info]: host:  {
+  "host": "localhost",
+  "user": "root",
+  "password": "12345678",
+  "database": "Amicell",
+  "port": 3306
+}

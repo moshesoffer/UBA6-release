@@ -1,0 +1,2 @@
+*.ibd filter=lfs diff=lfs merge=lfs -text
+web-console/data/ibdata1 filter=lfs diff=lfs merge=lfs -text

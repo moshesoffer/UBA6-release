@@ -1,0 +1,24 @@
+[2026-07-02 16:47:49.040] [info]: host:  {
+  "host": "localhost",
+  "user": "root",
+  "password": "12345678",
+  "database": "Amicell",
+  "port": 3306
+}
+[2026-07-02 16:47:50.125] [info]: host:  {
+  "host": "localhost",
+  "user": "root",
+  "password": "12345678",
+  "database": "Amicell",
+  "port": 3306
+}
+[2026-07-02 16:47:51.233] [info]: host:  {
+  "host": "localhost",
+  "user": "root",
+  "password": "12345678",
+  "database": "Amicell",
+  "port": 3306
+}
+[2026-07-02 16:47:51.408] [info]: folderPath already exists: C:\work\DEV\UBA6\amicell-data\reports-data 
+[2026-07-02 16:47:51.411] [info]: CORS is enabled for localhost environment 
+[2026-07-02 16:47:51.419] [info]: Listening on port 4000 

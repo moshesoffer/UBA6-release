@@ -1,0 +1,620 @@
+[2026-07-13 13:52:26.516] [info]: [32acd72e-1b54-466e-81f7-8be1ac9b4bef] getTestRoutines . 
+[2026-07-13 13:52:26.549] [info]: [eac36a96-f21d-4138-8be0-a84af7647bb6] getTestRoutines . 
+[2026-07-13 13:53:21.581] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] ==> runTest 
+[2026-07-13 13:53:21.581] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] await connection 3 
+[2026-07-13 13:53:21.582] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] connection.beginTransaction start 
+[2026-07-13 13:53:21.584] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] runTest {
+  "body": {
+    "id": "fbb84fef-5843-11f1-a127-ac45ef00059f",
+    "testName": "C-D_400mA-single",
+    "isLocked": 0,
+    "batteryPN": "901LI-190745-2S1P-M2",
+    "batterySN": "INR18650-30Q",
+    "cellPN": "INR18650-30Q",
+    "noCellSerial": 2,
+    "noCellParallel": 1,
+    "maxPerBattery": 8.4,
+    "maxVoltage": 4.2,
+    "ratedBatteryCapacity": 3000,
+    "channel": "A",
+    "notes": null,
+    "customer": null,
+    "workOrderNumber": null,
+    "approvedBy": null,
+    "conductedBy": null,
+    "cellSupplier": null,
+    "cellBatch": null,
+    "plan": [
+      {
+        "id": 0,
+        "type": "charge",
+        "cRate": 0.13,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": "400:absoluteMa",
+        "chargePerCell": 4.2,
+        "cutOffCurrent": "60:absoluteMa",
+        "cutOffVoltage": null,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": true,
+        "isCutOffVoltage": false,
+        "dischargeCurrent": ":absoluteMa",
+        "isDischargeLimit": false
+      },
+      {
+        "id": 1,
+        "type": "discharge",
+        "cRate": 0.17,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": ":absoluteMa",
+        "chargePerCell": null,
+        "cutOffCurrent": ":absoluteMa",
+        "cutOffVoltage": 3,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": false,
+        "isCutOffVoltage": true,
+        "dischargeCurrent": "500:absoluteMa",
+        "isDischargeLimit": false
+      },
+      {
+        "id": 2,
+        "type": "charge",
+        "cRate": 0.13,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": "400:absoluteMa",
+        "chargePerCell": 4.2,
+        "cutOffCurrent": "60:absoluteMa",
+        "cutOffVoltage": null,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": true,
+        "isCutOffVoltage": false,
+        "dischargeCurrent": ":absoluteMa",
+        "isDischargeLimit": false
+      },
+      {
+        "id": 3,
+        "type": "discharge",
+        "cRate": 0.07,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": ":absoluteMa",
+        "chargePerCell": null,
+        "cutOffCurrent": ":absoluteMa",
+        "cutOffVoltage": 3,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": false,
+        "isCutOffVoltage": true,
+        "dischargeCurrent": "200:absoluteMa",
+        "isDischargeLimit": false
+      }
+    ],
+    "ubaSNs": [
+      {
+        "ubaSN": "0",
+        "channel": "A"
+      }
+    ]
+  }
+}
+[2026-07-13 13:53:21.585] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] SELECT RunningTests 
+[2026-07-13 13:53:21.589] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] resultArray.length 1 
+[2026-07-13 13:53:21.590] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] resultArray after filter - only running {
+  "runningTests": []
+}
+[2026-07-13 13:53:21.892] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] result?.affectedRows 1 1 
+[2026-07-13 13:53:21.892] [debug]: [fa3a0ebf-1360-48fc-8665-520e88f08348] Deleted 1 rows for "[{"ubaSN":"0","channel":"A"}]" parameters. 
+[2026-07-13 13:53:21.893] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] runTest finished deleteRunningTest {
+  "ubaSNs": [
+    {
+      "ubaSN": "0",
+      "channel": "A"
+    }
+  ]
+}
+[2026-07-13 13:53:21.893] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] ==> checkRunningTestKeys 
+[2026-07-13 13:53:21.895] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] this is single channel test 
+[2026-07-13 13:53:21.895] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] ==> Generate a UUID 
+[2026-07-13 13:53:21.895] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] ==> createRunningTest id [1fb759f3-d1d8-4ecd-8933-05ffaae81ee4] 
+[2026-07-13 13:53:21.900] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] runTest finished createRunningTest {
+  "ids": [
+    "1fb759f3-d1d8-4ecd-8933-05ffaae81ee4"
+  ]
+}
+[2026-07-13 13:53:21.908] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] runTest finished createReport {
+  "reportId": "cf801aae-835c-4855-9a00-39bc7b897912"
+}
+[2026-07-13 13:53:21.910] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] folderPath created: C:\work\DEV\UBA6\amicell-data\reports-data\cf801aae-835c-4855-9a00-39bc7b897912 
+[2026-07-13 13:53:21.913] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] runTest finished createTestResultsFile {
+  "reportId": "cf801aae-835c-4855-9a00-39bc7b897912"
+}
+[2026-07-13 13:53:21.918] [info]: [fa3a0ebf-1360-48fc-8665-520e88f08348] runTest connection commit 
+[2026-07-13 13:53:21.922] [error]: [c2e39fa3-5582-4c45-99a6-b1bacde85663] Error [InstantTestResults] executing [INSERT INTO `InstantTestResults` (`id`, `runningTestID`, `timestamp`, `testState`, `testCurrentStep`, `voltage`, `current`, `temp`, `capacity`, `error`) VALUES (UUID(), ?, ?, ?, ?, ?, ?, ?, ?, ?);] [ed763306-9e48-41ea-b153-626c8bbd7077,2026-07-13 13:53:21.637,Standby,0,7831,0,29.26654815673828,0,0] Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE) - Error: Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE)
+    at PromisePoolConnection.execute (C:\work\DEV\UBA6\web-console\server\node_modules\mysql2\lib\promise\connection.js:47:22)
+    at createModel (C:\work\DEV\UBA6\web-console\server\db\genericCRUD.js:74:63)
+    at addInstantTestResults (C:\work\DEV\UBA6\web-console\server\services\runningTestService.js:58:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async exports.addInstantTestResults (C:\work\DEV\UBA6\web-console\server\controllers\runningTestsController.js:14:3)
+[2026-07-13 13:53:21.925] [error]: [c2e39fa3-5582-4c45-99a6-b1bacde85663] addInstantTestResults Transaction error: Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE) - Error: Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE)
+    at PromisePoolConnection.execute (C:\work\DEV\UBA6\web-console\server\node_modules\mysql2\lib\promise\connection.js:47:22)
+    at createModel (C:\work\DEV\UBA6\web-console\server\db\genericCRUD.js:74:63)
+    at addInstantTestResults (C:\work\DEV\UBA6\web-console\server\services\runningTestService.js:58:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async exports.addInstantTestResults (C:\work\DEV\UBA6\web-console\server\controllers\runningTestsController.js:14:3)
+[2026-07-13 13:53:21.926] [error]: [c2e39fa3-5582-4c45-99a6-b1bacde85663] addInstantTestResults Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE) - Error: Cannot add or update a child row: a foreign key constraint fails (`amicell`.`instanttestresults`, CONSTRAINT `RunningTests_InstantTestResults_fk` FOREIGN KEY (`runningTestID`) REFERENCES `runningtests` (`id`) ON DELETE CASCADE)
+    at PromisePoolConnection.execute (C:\work\DEV\UBA6\web-console\server\node_modules\mysql2\lib\promise\connection.js:47:22)
+    at createModel (C:\work\DEV\UBA6\web-console\server\db\genericCRUD.js:74:63)
+    at addInstantTestResults (C:\work\DEV\UBA6\web-console\server\services\runningTestService.js:58:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async exports.addInstantTestResults (C:\work\DEV\UBA6\web-console\server\controllers\runningTestsController.js:14:3)
+[2026-07-13 13:53:22.911] [info]: [9da8e904-f95b-4e4a-8a1d-22a9ce45e68a] getTestRoutines . 
+[2026-07-13 13:53:22.924] [info]: [05c8308e-edc9-4383-8aac-863c7b0ba13c] getTestRoutines . 
+[2026-07-13 13:53:28.566] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] ==> runTest 
+[2026-07-13 13:53:28.566] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] await connection 3 
+[2026-07-13 13:53:28.567] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] connection.beginTransaction start 
+[2026-07-13 13:53:28.568] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] runTest {
+  "body": {
+    "id": "2b3a931c-62af-11f1-9074-ac45ef00059f",
+    "testName": "C-D_400mA-single.3",
+    "isLocked": 0,
+    "batteryPN": "901LI-190745-2S1P-M2",
+    "batterySN": "INR18650-30Q",
+    "cellPN": "INR18650-30Q",
+    "noCellSerial": 2,
+    "noCellParallel": 1,
+    "maxPerBattery": 8.4,
+    "maxVoltage": 4.2,
+    "ratedBatteryCapacity": 3000,
+    "channel": "B",
+    "notes": null,
+    "customer": null,
+    "workOrderNumber": null,
+    "approvedBy": null,
+    "conductedBy": null,
+    "cellSupplier": null,
+    "cellBatch": null,
+    "plan": [
+      {
+        "id": 0,
+        "type": "charge",
+        "cRate": 0.33,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": "1:absoluteA",
+        "chargePerCell": 4.2,
+        "cutOffCurrent": "60:absoluteMa",
+        "cutOffVoltage": null,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": true,
+        "isCutOffVoltage": false,
+        "dischargeCurrent": ":absoluteMa",
+        "isDischargeLimit": false
+      },
+      {
+        "id": 1,
+        "type": "discharge",
+        "cRate": 0.67,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": ":absoluteMa",
+        "chargePerCell": null,
+        "cutOffCurrent": ":absoluteMa",
+        "cutOffVoltage": 3,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": false,
+        "isCutOffVoltage": true,
+        "dischargeCurrent": "2:absoluteA",
+        "isDischargeLimit": false
+      },
+      {
+        "id": 2,
+        "type": "charge",
+        "cRate": 0.13,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": "400:absoluteMa",
+        "chargePerCell": 4.2,
+        "cutOffCurrent": "60:absoluteMa",
+        "cutOffVoltage": null,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": true,
+        "isCutOffVoltage": false,
+        "dischargeCurrent": ":absoluteMa",
+        "isDischargeLimit": false
+      },
+      {
+        "id": 3,
+        "type": "discharge",
+        "cRate": 0.07,
+        "source": "internal",
+        "maxTemp": 60,
+        "maxTime": "00:00:00",
+        "minTemp": -20,
+        "goToStep": null,
+        "waitTemp": null,
+        "delayTime": null,
+        "isMaxTemp": false,
+        "isMaxTime": false,
+        "isMinTemp": false,
+        "repeatStep": null,
+        "chargeLimit": ":absoluteMah",
+        "isCollapsed": false,
+        "chargeCurrent": ":absoluteMa",
+        "chargePerCell": null,
+        "cutOffCurrent": ":absoluteMa",
+        "cutOffVoltage": 3,
+        "isChargeLimit": false,
+        "dischargeLimit": ":absoluteMah",
+        "isIgnoreLimits": false,
+        "isCutOffCurrent": false,
+        "isCutOffVoltage": true,
+        "dischargeCurrent": "200:absoluteMa",
+        "isDischargeLimit": false
+      }
+    ],
+    "ubaSNs": [
+      {
+        "ubaSN": "0",
+        "channel": "B"
+      }
+    ]
+  }
+}
+[2026-07-13 13:53:28.570] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] SELECT RunningTests 
+[2026-07-13 13:53:28.573] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] resultArray.length 1 
+[2026-07-13 13:53:28.573] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] resultArray after filter - only running {
+  "runningTests": []
+}
+[2026-07-13 13:53:28.901] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] result?.affectedRows 1 1 
+[2026-07-13 13:53:28.901] [debug]: [69dfb6af-18eb-4903-8260-d4159e826428] Deleted 1 rows for "[{"ubaSN":"0","channel":"B"}]" parameters. 
+[2026-07-13 13:53:28.901] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] runTest finished deleteRunningTest {
+  "ubaSNs": [
+    {
+      "ubaSN": "0",
+      "channel": "B"
+    }
+  ]
+}
+[2026-07-13 13:53:28.902] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] ==> checkRunningTestKeys 
+[2026-07-13 13:53:28.905] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] this is single channel test 
+[2026-07-13 13:53:28.906] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] ==> Generate a UUID 
+[2026-07-13 13:53:28.906] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] ==> createRunningTest id [db9e832d-ca15-40e1-b266-8134f88c1808] 
+[2026-07-13 13:53:28.912] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] runTest finished createRunningTest {
+  "ids": [
+    "db9e832d-ca15-40e1-b266-8134f88c1808"
+  ]
+}
+[2026-07-13 13:53:28.914] [error]: [6c5b628e-888b-45b6-8ad5-950e8434b3be] Error [InstantTestResults] executing [INSERT INTO `InstantTestResults` (`id`, `runningTestID`, `timestamp`, `testState`, `testCurrentStep`, `voltage`, `current`, `temp`, `capacity`, `error`) VALUES (UUID(), ?, ?, ?, ?, ?, ?, ?, ?, ?);] [e1b8f40e-c365-4118-bf00-811bbfb87a19,2026-07-13 13:53:28.613,Standby,0,6724,0,29.34708023071289,0,0] Deadlock found when trying to get lock; try restarting transaction - Error: Deadlock found when trying to get lock; try restarting transaction
+    at PromisePoolConnection.execute (C:\work\DEV\UBA6\web-console\server\node_modules\mysql2\lib\promise\connection.js:47:22)
+    at createModel (C:\work\DEV\UBA6\web-console\server\db\genericCRUD.js:74:63)
+    at addInstantTestResults (C:\work\DEV\UBA6\web-console\server\services\runningTestService.js:58:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async exports.addInstantTestResults (C:\work\DEV\UBA6\web-console\server\controllers\runningTestsController.js:14:3)
+[2026-07-13 13:53:28.918] [error]: [6c5b628e-888b-45b6-8ad5-950e8434b3be] addInstantTestResults Transaction error: Deadlock found when trying to get lock; try restarting transaction - Error: Deadlock found when trying to get lock; try restarting transaction
+    at PromisePoolConnection.execute (C:\work\DEV\UBA6\web-console\server\node_modules\mysql2\lib\promise\connection.js:47:22)
+    at createModel (C:\work\DEV\UBA6\web-console\server\db\genericCRUD.js:74:63)
+    at addInstantTestResults (C:\work\DEV\UBA6\web-console\server\services\runningTestService.js:58:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async exports.addInstantTestResults (C:\work\DEV\UBA6\web-console\server\controllers\runningTestsController.js:14:3)
+[2026-07-13 13:53:28.918] [error]: [6c5b628e-888b-45b6-8ad5-950e8434b3be] addInstantTestResults Deadlock found when trying to get lock; try restarting transaction - Error: Deadlock found when trying to get lock; try restarting transaction
+    at PromisePoolConnection.execute (C:\work\DEV\UBA6\web-console\server\node_modules\mysql2\lib\promise\connection.js:47:22)
+    at createModel (C:\work\DEV\UBA6\web-console\server\db\genericCRUD.js:74:63)
+    at addInstantTestResults (C:\work\DEV\UBA6\web-console\server\services\runningTestService.js:58:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async exports.addInstantTestResults (C:\work\DEV\UBA6\web-console\server\controllers\runningTestsController.js:14:3)
+[2026-07-13 13:53:28.919] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] runTest finished createReport {
+  "reportId": "d0c2de97-8ddb-47c6-9a7f-cbb90870f946"
+}
+[2026-07-13 13:53:28.921] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] folderPath created: C:\work\DEV\UBA6\amicell-data\reports-data\d0c2de97-8ddb-47c6-9a7f-cbb90870f946 
+[2026-07-13 13:53:28.925] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] runTest finished createTestResultsFile {
+  "reportId": "d0c2de97-8ddb-47c6-9a7f-cbb90870f946"
+}
+[2026-07-13 13:53:28.931] [info]: [69dfb6af-18eb-4903-8260-d4159e826428] runTest connection commit 
+[2026-07-13 13:54:07.871] [info]: [a0ad1f12-a601-4977-ba93-7508d04c59c1] (trns)updateReportAndTestResult 
+[2026-07-13 13:54:07.874] [info]: [a0ad1f12-a601-4977-ba93-7508d04c59c1] updateReportAndTestResult finished updateReport 
+[2026-07-13 13:54:07.875] [info]: [a0ad1f12-a601-4977-ba93-7508d04c59c1] folderPath already exists: C:\work\DEV\UBA6\amicell-data\reports-data\d0c2de97-8ddb-47c6-9a7f-cbb90870f946 
+[2026-07-13 13:54:07.877] [info]: [a0ad1f12-a601-4977-ba93-7508d04c59c1] updateReportAndTestResult finished createTestResultsFile 
+[2026-07-13 13:54:09.531] [info]: [97b970a5-65e2-429c-95d1-3b91343c2f2a] (trns)updateReportAndTestResult 
+[2026-07-13 13:54:09.532] [info]: [97b970a5-65e2-429c-95d1-3b91343c2f2a] updateReportAndTestResult finished updateReport 
+[2026-07-13 13:54:09.533] [info]: [97b970a5-65e2-429c-95d1-3b91343c2f2a] folderPath already exists: C:\work\DEV\UBA6\amicell-data\reports-data\d0c2de97-8ddb-47c6-9a7f-cbb90870f946 
+[2026-07-13 13:54:09.536] [info]: [97b970a5-65e2-429c-95d1-3b91343c2f2a] updateReportAndTestResult finished createTestResultsFile 
+[2026-07-13 13:54:19.314] [info]: [56f505a3-91fa-4de6-8b9b-f7fa333e88cb] (trns)updateReportAndTestResult 
+[2026-07-13 13:54:19.316] [info]: [56f505a3-91fa-4de6-8b9b-f7fa333e88cb] updateReportAndTestResult finished updateReport 
+[2026-07-13 13:54:19.316] [info]: [56f505a3-91fa-4de6-8b9b-f7fa333e88cb] folderPath already exists: C:\work\DEV\UBA6\amicell-data\reports-data\cf801aae-835c-4855-9a00-39bc7b897912 
+[2026-07-13 13:54:19.318] [info]: [56f505a3-91fa-4de6-8b9b-f7fa333e88cb] updateReportAndTestResult finished createTestResultsFile 
+[2026-07-13 13:54:21.272] [info]: [347b1993-5655-41e8-91b7-fed4552522b2] (trns)updateReportAndTestResult 
+[2026-07-13 13:54:21.274] [info]: [347b1993-5655-41e8-91b7-fed4552522b2] updateReportAndTestResult finished updateReport 
+[2026-07-13 13:54:21.274] [info]: [347b1993-5655-41e8-91b7-fed4552522b2] folderPath already exists: C:\work\DEV\UBA6\amicell-data\reports-data\cf801aae-835c-4855-9a00-39bc7b897912 
+[2026-07-13 13:54:21.277] [info]: [347b1993-5655-41e8-91b7-fed4552522b2] updateReportAndTestResult finished createTestResultsFile 
+[2026-07-13 13:54:36.955] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] going to getReportWithTestResults 
+[2026-07-13 13:54:36.962] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] finished getReportWithTestResults 
+[2026-07-13 13:54:37.011] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] [C:\work\DEV\UBA6\web-console\server\assets\excel_template.xlsx] start to fill testData 
+[2026-07-13 13:54:37.011] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] start to fill testResults data sheet for the graph and reportSheet steps 
+[2026-07-13 13:54:37.012] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 0]  
+[2026-07-13 13:54:37.012] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 1]  
+[2026-07-13 13:54:37.013] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 2]  
+[2026-07-13 13:54:37.013] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 3]  
+[2026-07-13 13:54:37.013] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 4]  
+[2026-07-13 13:54:37.013] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 5]  
+[2026-07-13 13:54:37.014] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 6]  
+[2026-07-13 13:54:37.017] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 7]  
+[2026-07-13 13:54:37.017] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 8]  
+[2026-07-13 13:54:37.017] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 9]  
+[2026-07-13 13:54:37.017] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 10]  
+[2026-07-13 13:54:37.017] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 11]  
+[2026-07-13 13:54:37.018] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 12]  
+[2026-07-13 13:54:37.018] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 13]  
+[2026-07-13 13:54:37.018] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 14]  
+[2026-07-13 13:54:37.018] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 15]  
+[2026-07-13 13:54:37.019] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 16]  
+[2026-07-13 13:54:37.019] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 17]  
+[2026-07-13 13:54:37.019] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 18]  
+[2026-07-13 13:54:37.020] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 19]  
+[2026-07-13 13:54:37.020] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 20]  
+[2026-07-13 13:54:37.021] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 21]  
+[2026-07-13 13:54:37.021] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 22]  
+[2026-07-13 13:54:37.021] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 23]  
+[2026-07-13 13:54:37.021] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 24]  
+[2026-07-13 13:54:37.021] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 25]  
+[2026-07-13 13:54:37.022] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 26]  
+[2026-07-13 13:54:37.022] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 27]  
+[2026-07-13 13:54:37.022] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 28]  
+[2026-07-13 13:54:37.023] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 29]  
+[2026-07-13 13:54:37.023] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 30]  
+[2026-07-13 13:54:37.023] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 31]  
+[2026-07-13 13:54:37.023] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 32]  
+[2026-07-13 13:54:37.023] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 33]  
+[2026-07-13 13:54:37.026] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] write to [C:\work\DEV\UBA6\web-console\server\utils\output-55bf0747-c191-4cc6-8fe0-7c88086e226a.xlsx], exportType [XSLX] 
+[2026-07-13 13:54:37.087] [info]: [d0ee8f13-57f1-4074-8e3a-3bc75e2f6e07] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] createReadStream to [C:\work\DEV\UBA6\web-console\server\utils\output-55bf0747-c191-4cc6-8fe0-7c88086e226a.xlsx] 
+[2026-07-13 13:54:38.290] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] going to getReportWithTestResults 
+[2026-07-13 13:54:38.293] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] finished getReportWithTestResults 
+[2026-07-13 13:54:38.314] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] [C:\work\DEV\UBA6\web-console\server\assets\excel_template.xlsx] start to fill testData 
+[2026-07-13 13:54:38.315] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] start to fill testResults data sheet for the graph and reportSheet steps 
+[2026-07-13 13:54:38.315] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 0]  
+[2026-07-13 13:54:38.316] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 1]  
+[2026-07-13 13:54:38.316] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 2]  
+[2026-07-13 13:54:38.316] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 3]  
+[2026-07-13 13:54:38.317] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 4]  
+[2026-07-13 13:54:38.317] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 5]  
+[2026-07-13 13:54:38.317] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 6]  
+[2026-07-13 13:54:38.317] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 7]  
+[2026-07-13 13:54:38.318] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 8]  
+[2026-07-13 13:54:38.318] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 9]  
+[2026-07-13 13:54:38.319] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 10]  
+[2026-07-13 13:54:38.319] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 11]  
+[2026-07-13 13:54:38.319] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 12]  
+[2026-07-13 13:54:38.319] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 13]  
+[2026-07-13 13:54:38.320] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 14]  
+[2026-07-13 13:54:38.320] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 15]  
+[2026-07-13 13:54:38.320] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 16]  
+[2026-07-13 13:54:38.320] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 17]  
+[2026-07-13 13:54:38.321] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 18]  
+[2026-07-13 13:54:38.321] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 19]  
+[2026-07-13 13:54:38.321] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 20]  
+[2026-07-13 13:54:38.321] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 21]  
+[2026-07-13 13:54:38.322] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 22]  
+[2026-07-13 13:54:38.322] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 23]  
+[2026-07-13 13:54:38.322] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 24]  
+[2026-07-13 13:54:38.322] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 25]  
+[2026-07-13 13:54:38.323] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 26]  
+[2026-07-13 13:54:38.323] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 27]  
+[2026-07-13 13:54:38.323] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 28]  
+[2026-07-13 13:54:38.323] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 29]  
+[2026-07-13 13:54:38.324] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 30]  
+[2026-07-13 13:54:38.324] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 31]  
+[2026-07-13 13:54:38.324] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 32]  
+[2026-07-13 13:54:38.324] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 33]  
+[2026-07-13 13:54:38.327] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] write to [C:\work\DEV\UBA6\web-console\server\utils\output-9dfc6df1-1ed5-491e-a266-5b19997454b6.xlsx], exportType [XSLX] 
+[2026-07-13 13:54:38.349] [info]: [e9bcde3f-aee8-4ee5-9e40-18d6a0b02151] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] createReadStream to [C:\work\DEV\UBA6\web-console\server\utils\output-9dfc6df1-1ed5-491e-a266-5b19997454b6.xlsx] 
+[2026-07-13 13:54:40.245] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] going to getReportWithTestResults 
+[2026-07-13 13:54:40.250] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] finished getReportWithTestResults 
+[2026-07-13 13:54:40.273] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] [C:\work\DEV\UBA6\web-console\server\assets\excel_template.xlsx] start to fill testData 
+[2026-07-13 13:54:40.274] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] start to fill testResults data sheet for the graph and reportSheet steps 
+[2026-07-13 13:54:40.275] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 0]  
+[2026-07-13 13:54:40.276] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 1]  
+[2026-07-13 13:54:40.276] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 2]  
+[2026-07-13 13:54:40.276] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 3]  
+[2026-07-13 13:54:40.277] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 4]  
+[2026-07-13 13:54:40.277] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 5]  
+[2026-07-13 13:54:40.278] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 6]  
+[2026-07-13 13:54:40.278] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 7]  
+[2026-07-13 13:54:40.278] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 8]  
+[2026-07-13 13:54:40.279] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 9]  
+[2026-07-13 13:54:40.279] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 10]  
+[2026-07-13 13:54:40.279] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 11]  
+[2026-07-13 13:54:40.280] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 12]  
+[2026-07-13 13:54:40.280] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 13]  
+[2026-07-13 13:54:40.280] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 14]  
+[2026-07-13 13:54:40.281] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 15]  
+[2026-07-13 13:54:40.281] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 16]  
+[2026-07-13 13:54:40.281] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 17]  
+[2026-07-13 13:54:40.281] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 18]  
+[2026-07-13 13:54:40.282] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 19]  
+[2026-07-13 13:54:40.282] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 20]  
+[2026-07-13 13:54:40.282] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 21]  
+[2026-07-13 13:54:40.283] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 22]  
+[2026-07-13 13:54:40.283] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 23]  
+[2026-07-13 13:54:40.283] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 24]  
+[2026-07-13 13:54:40.283] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 25]  
+[2026-07-13 13:54:40.283] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 26]  
+[2026-07-13 13:54:40.284] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 27]  
+[2026-07-13 13:54:40.284] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 28]  
+[2026-07-13 13:54:40.284] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 29]  
+[2026-07-13 13:54:40.285] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 30]  
+[2026-07-13 13:54:40.286] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 31]  
+[2026-07-13 13:54:40.286] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 32]  
+[2026-07-13 13:54:40.286] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 33]  
+[2026-07-13 13:54:40.288] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] write to [C:\work\DEV\UBA6\web-console\server\utils\output-4a2850a0-c4aa-45d8-9784-89bed948c30c.xlsx], exportType [XSLX] 
+[2026-07-13 13:54:40.319] [info]: [b7d21990-4eb4-474f-9d36-391703cc37fa] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] createReadStream to [C:\work\DEV\UBA6\web-console\server\utils\output-4a2850a0-c4aa-45d8-9784-89bed948c30c.xlsx] 
+[2026-07-13 13:54:42.511] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] going to getReportWithTestResults 
+[2026-07-13 13:54:42.516] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] finished getReportWithTestResults 
+[2026-07-13 13:54:42.539] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] [C:\work\DEV\UBA6\web-console\server\assets\pdf_template.xlsx] start to fill testData 
+[2026-07-13 13:54:42.540] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] start to fill testResults data sheet for the graph and reportSheet steps 
+[2026-07-13 13:54:42.540] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 0]  
+[2026-07-13 13:54:42.541] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 1]  
+[2026-07-13 13:54:42.541] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 2]  
+[2026-07-13 13:54:42.542] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 3]  
+[2026-07-13 13:54:42.542] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 4]  
+[2026-07-13 13:54:42.542] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 5]  
+[2026-07-13 13:54:42.543] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 6]  
+[2026-07-13 13:54:42.543] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 7]  
+[2026-07-13 13:54:42.544] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 8]  
+[2026-07-13 13:54:42.544] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 9]  
+[2026-07-13 13:54:42.544] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 10]  
+[2026-07-13 13:54:42.545] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 11]  
+[2026-07-13 13:54:42.545] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 12]  
+[2026-07-13 13:54:42.545] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 13]  
+[2026-07-13 13:54:42.546] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 14]  
+[2026-07-13 13:54:42.546] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 15]  
+[2026-07-13 13:54:42.546] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 16]  
+[2026-07-13 13:54:42.547] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 17]  
+[2026-07-13 13:54:42.547] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 18]  
+[2026-07-13 13:54:42.548] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 19]  
+[2026-07-13 13:54:42.548] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 20]  
+[2026-07-13 13:54:42.548] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 21]  
+[2026-07-13 13:54:42.548] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 22]  
+[2026-07-13 13:54:42.549] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 23]  
+[2026-07-13 13:54:42.549] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 24]  
+[2026-07-13 13:54:42.549] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 25]  
+[2026-07-13 13:54:42.549] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 26]  
+[2026-07-13 13:54:42.550] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 27]  
+[2026-07-13 13:54:42.550] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 28]  
+[2026-07-13 13:54:42.550] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 29]  
+[2026-07-13 13:54:42.551] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 30]  
+[2026-07-13 13:54:42.551] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 31]  
+[2026-07-13 13:54:42.551] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 32]  
+[2026-07-13 13:54:42.551] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 33]  
+[2026-07-13 13:54:42.553] [info]: [45811447-afe8-4243-a3fb-217323c23584] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] write to [C:\work\DEV\UBA6\web-console\server\utils\output-f6d915a6-09e2-417a-89ed-ff18c5b092d2.xlsx], exportType [PDF] 
+[2026-07-13 13:54:45.239] [info]: [45811447-afe8-4243-a3fb-217323c23584] pdf converted C:\work\DEV\UBA6\web-console\server\utils\output-f6d915a6-09e2-417a-89ed-ff18c5b092d2.xlsx    Stdout:  
+[2026-07-13 13:54:46.955] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] going to getReportWithTestResults 
+[2026-07-13 13:54:46.957] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] finished getReportWithTestResults 
+[2026-07-13 13:54:46.974] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] [C:\work\DEV\UBA6\web-console\server\assets\pdf_template.xlsx] start to fill testData 
+[2026-07-13 13:54:46.975] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] start to fill testResults data sheet for the graph and reportSheet steps 
+[2026-07-13 13:54:46.976] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 0]  
+[2026-07-13 13:54:46.976] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 1]  
+[2026-07-13 13:54:46.976] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 2]  
+[2026-07-13 13:54:46.976] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 3]  
+[2026-07-13 13:54:46.977] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 4]  
+[2026-07-13 13:54:46.977] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 5]  
+[2026-07-13 13:54:46.977] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 6]  
+[2026-07-13 13:54:46.978] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 7]  
+[2026-07-13 13:54:46.978] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 8]  
+[2026-07-13 13:54:46.978] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 9]  
+[2026-07-13 13:54:46.978] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 10]  
+[2026-07-13 13:54:46.979] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 11]  
+[2026-07-13 13:54:46.979] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 12]  
+[2026-07-13 13:54:46.979] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 13]  
+[2026-07-13 13:54:46.980] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 14]  
+[2026-07-13 13:54:46.980] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 15]  
+[2026-07-13 13:54:46.980] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 16]  
+[2026-07-13 13:54:46.981] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 17]  
+[2026-07-13 13:54:46.981] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 18]  
+[2026-07-13 13:54:46.981] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 19]  
+[2026-07-13 13:54:46.982] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 20]  
+[2026-07-13 13:54:46.982] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 21]  
+[2026-07-13 13:54:46.982] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 22]  
+[2026-07-13 13:54:46.983] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 23]  
+[2026-07-13 13:54:46.983] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 24]  
+[2026-07-13 13:54:46.983] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 25]  
+[2026-07-13 13:54:46.983] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 26]  
+[2026-07-13 13:54:46.984] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 27]  
+[2026-07-13 13:54:46.984] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 28]  
+[2026-07-13 13:54:46.984] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 29]  
+[2026-07-13 13:54:46.985] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 30]  
+[2026-07-13 13:54:46.985] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 31]  
+[2026-07-13 13:54:46.985] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 32]  
+[2026-07-13 13:54:46.986] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912 33]  
+[2026-07-13 13:54:46.988] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] downloadReportsGraph [cf801aae-835c-4855-9a00-39bc7b897912] write to [C:\work\DEV\UBA6\web-console\server\utils\output-512ca3ea-4997-4877-920c-a5b73931b761.xlsx], exportType [PDF] 
+[2026-07-13 13:54:48.662] [info]: [30268780-4c0a-4c39-82c1-a504ac9dcf80] pdf converted C:\work\DEV\UBA6\web-console\server\utils\output-512ca3ea-4997-4877-920c-a5b73931b761.xlsx    Stdout:  
