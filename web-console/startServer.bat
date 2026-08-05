@@ -7,9 +7,6 @@ start cmd /k ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --default
 REM start cmd /k ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file="C:\work\DEV\UBA6\web-console\my.ini" --console"
 REM start cmd /k ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --datadir="C:\work\DEV\UBA6\web-console\data" --console" 
 
-REM Wait a bit to make sure the front-end starts (optional)
-timeout /t 6
-
 set VITE_API_URL=http://localhost:4000/web-console
 set DB_CONFIGURATION_PASSWORD=12345678
 
