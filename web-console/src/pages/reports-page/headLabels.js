@@ -5,10 +5,6 @@ export default [
 		label: ''
 	},
 	{
-		id: 'ubaSN',
-		label: getText('common.UBA_S_N'),
-	},
-	{
 		id: 'batteryPN',
 		label: getText('testEditor.BATTERY_P_N'),
 		width: '10%',
@@ -45,6 +41,6 @@ export default [
 		label: getText('common.RUN_TIME'),
 	},
 	{
-		label: getText('common.ACTION'),
+		label: getText('common.ACTION_RATE'),
 	}
 ];

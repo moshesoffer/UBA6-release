@@ -4,6 +4,12 @@ Release/
 build/
 out/
 
+web-console/data/
+web-console/server/logs/
+web-console/server/node_modules/
+web-console/node_modules/
+web-console/server/node_modules/
+
 # ===== STM32 / CubeIDE =====
 *.elf
 *.hex
@@ -45,8 +51,3 @@ CMakeCache.txt
 *.bak
 *.tmp
 #*.csproj
-web-console/data/
-web-console/server/logs/
-web-console/server/node_modules/
-web-console/node_modules/
-web-console/server/node_modules/
