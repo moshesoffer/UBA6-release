@@ -31,7 +31,7 @@ export default function UbaCard({row}) {
 	const pollingRef = useRef(null);
 
 	useEffect(() => {
-	console.log (`==> testData.noCellSerial: ${testData?.noCellSerial?.toString()}`);
+	//console.log (`==> testData.noCellSerial: ${testData?.noCellSerial?.toString()}`);
 	}, [testData?.testName,]);
 
 	useEffect(() => {
@@ -123,11 +123,12 @@ export default function UbaCard({row}) {
 									sx={{
 											backgroundColor: rowStatus & statusCodes.RUNNING ? '#92D051' :
 													         rowStatus & statusCodes.NEXTSTEP ? '#92D051' :
-														 	 rowStatus === statusCodes.FINISHED ? '#92D051' :
-														 	 rowStatus === statusCodes.STOPPED ? '#FFA500' :
-														 	 rowStatus === statusCodes.PAUSED ? '#FFFF00' :
-														 	 rowStatus === statusCodes.STANDBY ? '#FFFFFF' :
-														 	 rowStatus === statusCodes.ABORTED ? '#FF0000' :
+														 	 rowStatus & statusCodes.FINISHED ? '#92D051' :
+														 	 rowStatus & statusCodes.STOPPED ? '#FFA500' :
+														 	 rowStatus & statusCodes.PAUSED ? '#FFFF00' :
+														 	 rowStatus & statusCodes.STANDBY ? '#FFFFFF' :
+														 	 rowStatus & statusCodes.ABORTED ? '#FF0000' :
+														 	 rowStatus & statusCodes.SAVED ? '#FFA500' :
 														 	 'gray', // Default color if no match
 										color: rowStatus === statusCodes.RUNNING || rowStatus === statusCodes.PAUSED || rowStatus === statusCodes.FINISHED ? 'black' : 'black', // Ensuring text is visible against background
 										border: '1px solid black',
@@ -180,9 +181,11 @@ export default function UbaCard({row}) {
 						<span style={{ fontFamily: 'monospace', whiteSpace: 'pre' }}>
 						  	{String('step:').padEnd(9, ' ')}
 
-						  	{row?.[channelIndex]?.status !== statusCodes.STANDBY && (
-						  	  	<b>{row?.[channelIndex]?.testCurrentStep + 1} of {row?.[channelIndex]?.totalStagesAmount}</b>
-						  	)}
+							{row?.[channelIndex]?.status === statusCodes.STOPPED ? (
+								<b>{row?.[channelIndex]?.testLastStep + 1} of {row?.[channelIndex]?.totalStagesAmount}</b>
+							) : row?.[channelIndex]?.status !== statusCodes.STANDBY ? (
+								<b>{row?.[channelIndex]?.testCurrentStep + 1} of {row?.[channelIndex]?.totalStagesAmount}</b>
+							) : null}
 						</span>
 					</Box>	
 				</Stack>

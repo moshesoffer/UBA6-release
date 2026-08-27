@@ -1,247 +1,64 @@
-//const logger = require('./logger');
 import {printCelsius, } from 'src/utils/helper';
 import {category, statusCodes, getKeyByValue, UBA_CHANNEL_LIST, isTestRunning} from 'src/constants/unsystematic';
 import {getText,} from 'src/services/string-definitions';
-import {dateFromUtc,} from 'src/utils/dateTimeHelper';
 
-const runtimeData = new Map();
+export const getTestRuntime = ubaDevice => {
+	if (!ubaDevice) return null;
+	if (ubaDevice.channel !== 'A' && ubaDevice.channel !== 'B') return null;
 
-const createRuntimeData = () => ({
-    startTimeA: -1,
-    pausedateChnlB: 0,
-    runtimeChnlA: null,
-    rundateChnlA: 0,
-
-    startTimeB: -1,
-    pausedateChnlA: 0,
-    runtimeChnlB: null,
-    rundateChnlB: 0,
-});
-
-const getRuntimeData = ubaSN => {
-    if (!runtimeData.has(ubaSN)) {
-        runtimeData.set(ubaSN, createRuntimeData());
-    }
-    return runtimeData.get(ubaSN);
-};
-
-
-export const getTestResultTimestamps = (reports) => {
-	if (!reports) return [];
-
-	return reports.flatMap(report =>
-		report.testResults?.map(tr => tr.timestamp) || []
-	);
-};
-
-export const buildRuntimeMap = (instantTestResults) => {
-	if (!instantTestResults) return {};
-
-	const map = {};
-
-	instantTestResults.forEach(r => {
-		map[r.timestamp] = convertTimestampToTime(r.timestamp);
-	});
-
-	return map;
-};
-
-
-
-const formatSeconds = seconds => [
-	parseInt(seconds / 60 / 60, 10),
-	parseInt(seconds / 60 % 60, 10),
-	parseInt(seconds % 60, 10),
-	// eslint-disable-next-line prefer-named-capture-group
-].join(':').replace(/\b(\d)\b/ug, '0$1');
-
-const getRuntime = (timestamp, startTimestamp) => {
-    const now = dateFromUtc(timestamp);
-    const start = dateFromUtc(startTimestamp);
-
-    let diff = now.getTime() - start.getTime();
-    diff = Math.round(diff / 1000);
-
-    return diff;
-};
-
-export const getTestRuntime1 = ubaDevice => {
-    if (!ubaDevice) return null;
-    if (ubaDevice.channel !== 'A' && ubaDevice.channel !== 'B') return null;
-
-	let currTime;
+	const { runtimeData } = ubaDevice;
+	if (!runtimeData) return null;
 
 	const instant = ubaDevice.instantTestResults || [];
-//	const runningTests = ubaDevice.runningTests || [];
-//console.log('instant:', instant.length);
-//console.log('runningTests:', runningTests.length);
+
 	const lastInstantTimestamp =
-    	instant.length > 0
-    	    ? instant[instant.length - 1].lastInstantResultsTimestamp
-    	    : ubaDevice.lastInstantResultsTimestamp; // fallback
+		instant.length > 0
+			? instant[instant.length - 1].lastInstantResultsTimestamp
+			: ubaDevice.lastInstantResultsTimestamp;
+
 	const testState =
-    	instant.length > 0
-    	    ? instant[instant.length - 1].testState
-    	    : ubaDevice.testState; // fallback
-//console.log (`==> lastInstantTimestamp: ${lastInstantTimestamp} testState: ${testState}`);
+		instant.length > 0
+			? instant[instant.length - 1].testState
+			: ubaDevice.testState;
 
-    if (ubaDevice.channel === 'A') {
-        if (
-            testState === 'Charge' ||
-            testState === 'Discharge' ||
+	if (ubaDevice.channel === 'A') {
+		if (
+			testState === 'Charge' ||
+			testState === 'Discharge' ||
 			testState === 'Pause'
-        ) {
-        	if (startTimeA === -1) {
-            	startTimeA = ubaDevice.lastInstantResultsTimestamp;
-        	}
-//console.log('timestamp:', ubaDevice.lastInstantResultsTimestamp, startTimeA);
-			currTime = getRuntime(ubaDevice.lastInstantResultsTimestamp, startTimeA);
-            rundateChnlA = currTime - pausedateChnlA;
- 			//console.log (`==> rundateChnlA: ${rundateChnlA}, currTime=${currTime}, pause=${pausedateChnlA},    now=${lastInstantTimestamp} start=${startTimeA}`);
-//        } else if (testState === 'Pause') {
-//			currTime = getRuntime(lastInstantTimestamp, startTimeA);
-//            pausedateChnlA = currTime - rundateChnlA;
-        } else if (testState === 'Standby') {
-            runtimeChnlA = 0;
-            startTimeA = -1;
-        }
+		) {
+			return runtimeData.rundateChnlA;
+		}
 
-        runtimeChnlA = formatSeconds(rundateChnlA);
-        return rundateChnlA;
-    }
+		return 0;
+	}
 
-    if (ubaDevice.channel === 'B') {
-        if (
-            testState === 'Charge' ||
-            testState === 'Discharge' ||
+	if (ubaDevice.channel === 'B') {
+		if (
+			testState === 'Charge' ||
+			testState === 'Discharge' ||
 			testState === 'Pause'
-        ) {
-        	if (startTimeB === -1) {
-            	startTimeB = ubaDevice.lastInstantResultsTimestamp;
-        	}
-//console.log('timestamp:', ubaDevice.lastInstantResultsTimestamp, startTimeB);
-			currTime = getRuntime(ubaDevice.lastInstantResultsTimestamp, startTimeB);
-            rundateChnlB = currTime - pausedateChnlB;
-//        } else if (testState === 'Pause') {
-//			currTime = getRuntime(ubaDevice.lastInstantResultsTimestamp, startTimeB);
-//            pausedateChnlB = currTime - rundateChnlB;
-        } else if (testState === 'Standby') {
-            runtimeChnlB = 0;
-            startTimeB = -1;
-        }
+		) {
+			return runtimeData.rundateChnlB;
+		}
 
-        runtimeChnlB = formatSeconds(rundateChnlB);
-        return rundateChnlB;
-    }
+		return 0;
+	}
+
+	return null;
 };
-export const getTestRuntime = ubaDevice => {
-    if (!ubaDevice) return null;
-    if (ubaDevice.channel !== 'A' && ubaDevice.channel !== 'B') return null;
-
-    //const ubaSN = ubaDevice.ubaSN;
-	const { ubaSN } = ubaDevice;
-    const data = getRuntimeData(ubaSN);
-
-    let currTime;
-
-    const instant = ubaDevice.instantTestResults || [];
-
-    const lastInstantTimestamp =
-        instant.length > 0
-            ? instant[instant.length - 1].lastInstantResultsTimestamp
-            : ubaDevice.lastInstantResultsTimestamp;
-
-    const testState =
-        instant.length > 0
-            ? instant[instant.length - 1].testState
-            : ubaDevice.testState;
-
-    if (ubaDevice.channel === 'A') {
-        if (
-            testState === 'Charge' ||
-            testState === 'Discharge' ||
-            testState === 'Pause'
-        ) {
-            if (data.startTimeA === -1) {
-                data.startTimeA = ubaDevice.lastInstantResultsTimestamp;
-            }
-
-            currTime = getRuntime(
-                ubaDevice.lastInstantResultsTimestamp,
-                data.startTimeA
-            );
-
-            data.rundateChnlA = currTime - data.pausedateChnlA;
-
-        } else if (testState === 'Standby') {
-//logger.info(`Standby reset start_Time: ${ubaDevice.ubaSN} ${ubaDevice.channel}`);
-            data.runtimeChnlA = 0;
-            data.startTimeA = -1;
-        }
-
-        data.runtimeChnlA = formatSeconds(data.rundateChnlA);
-
-        return data.rundateChnlA;
-    }
-
-    if (ubaDevice.channel === 'B') {
-        if (
-            testState === 'Charge' ||
-            testState === 'Discharge' ||
-            testState === 'Pause'
-        ) {
-            if (data.startTimeB === -1) {
-                data.startTimeB = ubaDevice.lastInstantResultsTimestamp;
-            }
-
-            currTime = getRuntime(
-                ubaDevice.lastInstantResultsTimestamp,
-                data.startTimeB
-            );
-
-            data.rundateChnlB = currTime - data.pausedateChnlB;
-
-        } else if (testState === 'Standby') {
-            data.runtimeChnlB = 0;
-            data.startTimeB = -1;
-        }
-
-        data.runtimeChnlB = formatSeconds(data.rundateChnlB);
-
-        return data.rundateChnlB;
-    }
-
-    return null;
-};
-
 
 export const enrichUbaDevicesWithRunTime = (ubaDevices) => ubaDevices.map(ubaDevice => {	
-	if(ubaDevice.testRoutineChannels === UBA_CHANNEL_LIST.A_AND_B && ubaDevice.status !== statusCodes.STANDBY && !ubaDevice.parallelRun){
-		//const otherObj = ubaDevices.find(ubaDeviceObj => ubaDeviceObj.testRoutineChannels === UBA_CHANNEL_LIST.A_AND_B &&
-		//								 ubaDeviceObj.status !== statusCodes.STANDBY && 
-		//								 ubaDeviceObj.ubaSN === ubaDevice.ubaSN &&
-		//								 ubaDeviceObj.channel !== ubaDevice.channel); - canonot be set
-			
+	if(ubaDevice.testRoutineChannels === UBA_CHANNEL_LIST.A_AND_B && ubaDevice.status !== statusCodes.STANDBY && !ubaDevice.parallelRun){			
 		ubaDevice.parallelRun = true;
-		//otherObj.parallelRun = true; - canoot be set
 	}
 
 	let rundate = getTestRuntime(ubaDevices);
 
-	//if (ubaDevice.channel === 'A') {
-	//	rundateChnlA = formatSeconds(rundateChnlA);
-		return {
-			...ubaDevice,
-			rundate,
-		};
-
-	//} else if (ubaDevice.channel === 'B') {
-	//	rundateChnlB = formatSeconds(rundateChnlB);
-	//	return {
-	//		...ubaDevice,
-	//		rundateChnlB,
-	//	};
-	//}
+	return {
+		...ubaDevice,
+		rundate,
+	};
 });
 
 export const getTestRoutineName = ubaDevice => {

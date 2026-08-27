@@ -148,6 +148,10 @@ export const getActions = (row, authDispatch, ubaDevicesDispatch, testRoutinesDi
                 <Button size="small" sx={{ width: 72, p: 0.2, height: 32 }} onClick={() => showWizardsZero(row, ubaDevicesDispatch)}>
                     <Typography fontSize={11}>Start Test</Typography>
                 </Button>
+
+                <IconButton title={getText('common.STOP')} aria-label="stop" onClick={() => handleForceStopTest(row, authDispatch, ubaDevicesDispatch)} >
+                    <StopCircleOutlinedIcon color="error" />
+                </IconButton>
             </ButtonGroup>
         );
     } 
@@ -220,6 +224,10 @@ export const getActions = (row, authDispatch, ubaDevicesDispatch, testRoutinesDi
                 <Button size="small" sx={{ width: 72, p: 0.2, height: 32 }} onClick={() => showWizardsZero(row, ubaDevicesDispatch)}>
                     <Typography fontSize={11}>Pending Save</Typography>
                 </Button>
+
+                <IconButton title={getText('common.STOP')} aria-label="stop" onClick={() => handleForceStopTest(row, authDispatch, ubaDevicesDispatch)} >
+                    <StopCircleOutlinedIcon color="error" />
+                </IconButton>
             </ButtonGroup>
         );
     }
@@ -240,8 +248,12 @@ export const getActions = (row, authDispatch, ubaDevicesDispatch, testRoutinesDi
         return (
             <ButtonGroup>
                 <Button size="small" sx={{ width: 72, p: 0.2, height: 32 }}>
-                    <Typography fontSize={11}>Unknown</Typography>
+                    <Typography fontSize={11}>Pending Start</Typography>
                 </Button>
+
+                <IconButton title={getText('common.STOP')} aria-label="stop" onClick={() => handleForceStopTest(row, authDispatch, ubaDevicesDispatch)} >
+                    <StopCircleOutlinedIcon color="error" />
+                </IconButton>
             </ButtonGroup>
         );
     }
@@ -291,9 +303,13 @@ const handleNextTest = (selectedRow, authDispatch, ubaDevicesDispatch) => {
     return false;
 };
 
-const handleResumeTest = (selectedRow, authDispatch, ubaDevicesDispatch) => resumeRunningTest(authDispatch, ubaDevicesDispatch, selectedRow?.runningTestID, selectedRow?.ubaSN, selectedRow?.testRoutineChannels);
+const handleResumeTest = (selectedRow, authDispatch, ubaDevicesDispatch) => {
+    resumeRunningTest(authDispatch, ubaDevicesDispatch, selectedRow?.runningTestID, selectedRow?.ubaSN, selectedRow?.testRoutineChannels);
+};
 
-const handleConfirmTest = (selectedRow, authDispatch, ubaDevicesDispatch) => confirmRunningTest(authDispatch, ubaDevicesDispatch, selectedRow?.runningTestID, selectedRow?.ubaSN, selectedRow?.testRoutineChannels);
+const handleConfirmTest = (selectedRow, authDispatch, ubaDevicesDispatch) => {
+    confirmRunningTest(authDispatch, ubaDevicesDispatch, selectedRow?.runningTestID, selectedRow?.ubaSN, selectedRow?.testRoutineChannels);
+};
 
 const handleGraphOpening = (selectedRow, authDispatch, ubaDevicesDispatch, testRoutinesDispatch) => {
     getGraphData(authDispatch, testRoutinesDispatch, selectedRow.runningTestID);

@@ -10,17 +10,60 @@ const { ubaChannels,} = require('../utils/constants');
 const { getLastInstantTestResult, getConnectedAmount } = require('../utils/testResultsHelper');
 const { withTimeout, AWAIT_TIMEOUT } = require('../utils/requestSync');
 
+const dateFromUtc = utcDate => {
+	const date = new Date(utcDate);
+	return new Date(date.getTime() + date.getTimezoneOffset() * 60000);
+}
+
+const formatSeconds = seconds => [
+	parseInt(seconds / 60 / 60, 10),
+	parseInt(seconds / 60 % 60, 10),
+	parseInt(seconds % 60, 10),
+	// eslint-disable-next-line prefer-named-capture-group
+].join(':').replace(/\b(\d)\b/ug, '0$1');
+
+const getRuntime = (timestamp, startTimestamp) => {
+	const now = dateFromUtc(timestamp);
+	const start = dateFromUtc(startTimestamp);
+
+	let diff = now.getTime() - start.getTime();
+	diff = Math.round(diff / 1000);
+
+	return diff;
+};
+
+const runtimeDataMap = new Map();
+
+const createRuntimeData = () => ({
+	startTimeA: -1,
+	pausedateChnlA: 0,
+	runtimeChnlA: null,
+	rundateChnlA: 0,
+
+	startTimeB: -1,
+	pausedateChnlB: 0,
+	runtimeChnlB: null,
+	rundateChnlB: 0,
+
+	testLastStep: 0,
+});
+
+const getRuntimeData = ubaSN => {
+	if (!runtimeDataMap.has(ubaSN)) {
+		//logger.debug(`RUNTIME INITIALIZE: SN=${ubaSN}`);
+		runtimeDataMap.set(ubaSN, createRuntimeData());
+	} else {
+		//logger.debug(`RUNTIME EXISTING: SN=${ubaSN}`);
+	}
+
+	return runtimeDataMap.get(ubaSN);
+};
+
 //fetching all data for main page
 exports.getUbaDevices = async (req, res) => {
 	try {
-		//Moshe
-		//logger.debug(`uba-devices going to call all promises`);
-		//TODO getRunningAmount might be not needed because calling getUbaDevices already returns running tests and then can see what is running
-		//TODO also getAllLatestInstantTestResults instead of calling db, go over all getUbaDevices running tests and get info from memory and 
-		//     if its not in memory then fetch from db and put in memory that way also next time it will be called we wont need to call db.
 		const [running, ubaDevices, latestInstantTestResults] = await Promise.all([getRunningAmount(), getUbaDevices(), getAllLatestInstantTestResults()]);
 		const ubaDevicesUniqueSN = [...new Map(ubaDevices.map(item => [item.ubaSN, item.ubaSN])).values()];
-		//Moshe
 		//logger.debug(`uba-devices going to enrichUbaDevices`);
 		const ubaEnriched = enrichUbaDevices(ubaDevices, latestInstantTestResults);
 		result = {
@@ -38,8 +81,73 @@ exports.getUbaDevices = async (req, res) => {
 	}
 };
 
-const enrichUbaDevices = (ubaDevices, latestInstantTestResults) => ubaDevices.map(ubaDevice => {
+const updateRuntimeData = (ubaDevice, runtimeData, testState) => {
+	const timestamp = ubaDevice.lastInstantResultsTimestamp;
 
+		if (ubaDevice.channel === 'A') {
+		if (
+			testState === 'Charge' ||
+			testState === 'Discharge' ||
+			testState === 'Pause'
+		) {
+			if (runtimeData.startTimeA === -1) {
+				runtimeData.startTimeA = timestamp;
+			}
+
+			const currTime = getRuntime(
+				timestamp,
+				runtimeData.startTimeA
+			);
+
+			runtimeData.rundateChnlA =
+				currTime - runtimeData.pausedateChnlA;
+
+			runtimeData.runtimeChnlA =
+				formatSeconds(runtimeData.rundateChnlA);
+
+		} else if ((testState === 'Init') ||
+				   (testState === 'TestCompleate')) { 
+			runtimeData.startTimeA = -1;
+			runtimeData.pausedateChnlA = 0;
+			runtimeData.runtimeChnlA = 0;
+			runtimeData.rundateChnlA = 0;
+		}
+	}
+
+	if (ubaDevice.channel === 'B') {
+		if (
+			testState === 'Charge' ||
+			testState === 'Discharge' ||
+			testState === 'Pause'
+		) {
+			if (runtimeData.startTimeB === -1) {
+				runtimeData.startTimeB = timestamp;
+			}
+
+			const currTime = getRuntime(
+				timestamp,
+				runtimeData.startTimeB
+			);
+
+			runtimeData.rundateChnlB =
+				currTime - runtimeData.pausedateChnlB;
+
+			runtimeData.runtimeChnlB =
+				formatSeconds(runtimeData.rundateChnlB);
+			
+		} else if ((testState === 'Init') ||
+				   (testState === 'TestCompleate')) { 
+			runtimeData.startTimeB = -1;
+			runtimeData.pausedateChnlB = 0;
+			runtimeData.runtimeChnlB = 0;
+			runtimeData.rundateChnlB = 0;
+		}
+	}
+};
+
+let testLastStep = 0;
+
+const enrichUbaDevices = (ubaDevices, latestInstantTestResults) => ubaDevices.map(ubaDevice => {
 	let testState = null;
 	let testCurrentStep = null;
 	let voltage = null;
@@ -56,7 +164,6 @@ const enrichUbaDevices = (ubaDevices, latestInstantTestResults) => ubaDevices.ma
 			let mostLatestObj = result;
 			const lastInstantFromMem = getLastInstantTestResult(result.runningTestID);
 			if (lastInstantFromMem && lastInstantFromMem.timestamp.getTime() >= result.timestamp.getTime()) {
-				//Moshe
 				//logger.debug(`==> Using last instant test result from memory for runningTestID ${lastInstantFromMem.memCreatedTime}`);
 				mostLatestObj = lastInstantFromMem;
 			}
@@ -71,12 +178,29 @@ const enrichUbaDevices = (ubaDevices, latestInstantTestResults) => ubaDevices.ma
 				timestamp,
 				memCreatedTime,
 			} = mostLatestObj);
-			//logger.debug(`==> timestamp ${timestamp}`);
 
 			break;
 		}
 	}
 	
+	// testState is now populated
+	const runtimeData = getRuntimeData(ubaDevice.ubaSN);
+
+	updateRuntimeData(
+		{
+			...ubaDevice,
+			lastInstantResultsTimestamp: timestamp,
+		},
+		runtimeData,
+		testState
+	);
+
+	//testLastStep = (testCurrentStep === 0) ? testLastStep : testCurrentStep;
+	if (testCurrentStep !== 0) {
+		runtimeData.testLastStep = testCurrentStep;
+	}
+	//logger.debug(`==> Using last ${testLastStep}`);
+
 	return {
 		...ubaDevice,
 		testState,
@@ -88,7 +212,8 @@ const enrichUbaDevices = (ubaDevices, latestInstantTestResults) => ubaDevices.ma
 		error,
 		lastInstantResultsTimestamp: timestamp,
 		ubaDeviceConnectedTimeAgoMs: memCreatedTime ? now - memCreatedTime.getTime() : null,
-//		ubaDeviceConnectedTimeAgoMs: memCreatedTime ? now - timestamp : null,
+		runtimeData,
+		testLastStep: runtimeData.testLastStep,
 	};
 });
 
