@@ -27,6 +27,13 @@ REM ========================================
 REM UBA6 Frontend / DB startup
 REM ========================================
 REM start cmd /c ".\stopServer.bat"
+REM taskkill /F /IM conhost.exe
+REM taskkill /F /IM UBASerice.exe
+
+REM ========================================
+REM UBA6 Service
+REM ========================================
+rem start cmd /k ""..\uba6_windwos_tools\UBAService\UBAService.exe" --console"
 
 REM ----------------------------------------
 REM MySQL
@@ -132,3 +139,8 @@ npm start
 if "%START_OPTION%" == "debug" (
     pause
 )
+
+
+
+
+

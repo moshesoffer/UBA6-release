@@ -1,6 +1,6 @@
 REM web control batch file
 
-@echo off
+REM @echo off
 REM ========================================
 REM UBA6 Frontend / DB startup
 REM ========================================
@@ -54,6 +54,14 @@ if %errorlevel%==0 (
 
     timeout /t 1 /nobreak >nul
 )
+
+REM ========================================
+REM UBA6 Service
+REM ========================================
+echo Closing all Console Host processes...
+taskkill /F /IM conhost.exe
+taskkill /F /IM cmd.exe
+taskkill /F /IM UBAService.exe
 
 REM pause
 
