@@ -4,7 +4,7 @@ Release/
 build/
 out/
 
-web-console/data/
+# web-console/data/
 web-console/server/logs/
 web-console/server/node_modules/
 web-console/node_modules/
