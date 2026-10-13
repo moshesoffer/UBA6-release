@@ -54,7 +54,7 @@ if "%START_OPTION%" == "debug" (
 	start cmd /k ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file=".\my.ini" --console"
 REM    start cmd %CMD_OPTION% ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file=".\my.ini" --console"
 ) else (
-    powershell -NoProfile -WindowStyle Hidden -Command ^
+REM    powershell -NoProfile -WindowStyle Hidden -Command ^
         "Start-Process -FilePath 'C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe' -ArgumentList '--defaults-file=.\my.ini"' -WindowStyle Hidden"
 REM    start cmd %CMD_OPTION% ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file=".\my.ini" --console"
 REM	start cmd /k ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file=".\my.ini" --console"
