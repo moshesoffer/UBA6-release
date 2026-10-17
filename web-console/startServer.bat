@@ -17,7 +17,7 @@ if /I "%~1"=="d" (
     set "CMD_OPTION=/c"
 ) else (
     set "START_OPTION="
-    set "CMD_OPTION=/k"
+    set "CMD_OPTION=/c"
 )
 
 @echo off
@@ -26,14 +26,7 @@ echo CMD mode: %CMD_OPTION% %START_OPTION%
 REM ========================================
 REM UBA6 Frontend / DB startup
 REM ========================================
-REM start cmd /c ".\stopServer.bat"
-REM taskkill /F /IM conhost.exe
-REM taskkill /F /IM UBASerice.exe
-
-REM ========================================
-REM UBA6 Service
-REM ========================================
-rem start cmd /k ""..\uba6_windwos_tools\UBAService\UBAService.exe" --console"
+start "" cmd %CMD_OPTION% ".\stopServer.bat"
 
 REM ----------------------------------------
 REM MySQL
@@ -51,13 +44,10 @@ echo MySQL is NOT running
 echo Start DB
 if "%START_OPTION%" == "debug" (
     echo start MYSQL debug
-	start cmd /k ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file=".\my.ini" --console"
-REM    start cmd %CMD_OPTION% ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file=".\my.ini" --console"
+    start "" cmd %CMD_OPTION% ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file=".\my.ini" --console"
 ) else (
-REM    powershell -NoProfile -WindowStyle Hidden -Command ^
-        "Start-Process -FilePath 'C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe' -ArgumentList '--defaults-file=.\my.ini"' -WindowStyle Hidden"
-REM    start cmd %CMD_OPTION% ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file=".\my.ini" --console"
-REM	start cmd /k ""C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe" --defaults-file=".\my.ini" --console"
+    powershell -NoProfile -WindowStyle Hidden -Command ^
+        "Start-Process -FilePath 'C:\Program Files\MySQL\MySQL Server 8.0\bin\mysqld.exe' -ArgumentList '--defaults-file=\"%~dp0my.ini\"' -WindowStyle Hidden"
 )
 
 REM ----------------------------------------
@@ -89,14 +79,13 @@ echo Frontend is NOT running
 echo Starting front-end...
 if "%START_OPTION%" == "debug" (
     echo nmp run debug
-    start cmd /k "npm run dev"
+    start ""  cmd %CMD_OPTION% "npm run dev"
 ) else (
     powershell -NoProfile -WindowStyle Hidden -Command ^
         "Start-Process -FilePath 'cmd.exe' -ArgumentList '/c','npm run dev' -WindowStyle Hidden"
-REM    start cmd /k "npm run dev"
 )
 REM Wait a bit to make sure the front-end starts (optional)
-timeout /t 6
+timeout /t 5
 
 
 REM run service
@@ -134,13 +123,7 @@ echo Starting backend server...
 set PORT=4000
 set ENABLE_CORS_FOR_LOCALHOST=true
 npm start
-    pause
 
 if "%START_OPTION%" == "debug" (
     pause
 )
-
-
-
-
-
