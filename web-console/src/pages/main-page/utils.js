@@ -83,7 +83,7 @@ export const getChargeCurrent = chargeCurrent => {
 	if(Math.abs(chargeCurrent) > 1){
 		return `${Number(chargeCurrent).toFixed(3)} A`;
 	}
-	return `${Number(chargeCurrent * 1000).toFixed(2)} mA`;
+	return `${Number(chargeCurrent * 1000).toFixed(1)} mA`;
 }
 
 export const getTemperature = temperature => {

@@ -334,7 +334,11 @@ const addChargeStepFromPlan = (stepIndex, planStepWrapper, testData, rowNumber, 
 
 	rowNumber++;
 	reportSheet.cell(`D${rowNumber}`).value(generalConsts.maxTermperature);
-	reportSheet.cell(`E${rowNumber}`).value(planStep.maxTemp).style("horizontalAlignment", "right").style("numberFormat", "0.00");
+	if (planStep.isMaxTemp === false) {
+		reportSheet.cell(`E${rowNumber}`).value(' ').style("horizontalAlignment", "right");
+	} else {
+   	    reportSheet.cell(`E${rowNumber}`).value(planStep.maxTemp).style("horizontalAlignment", "right").style("numberFormat", "0.00");
+	}
 	reportSheet.cell(`F${rowNumber}`).value('°C');
 	reportSheet.cell(`H${rowNumber}`).value(generalConsts.initialVoltage);
 	reportSheet.cell(`I${rowNumber}`).value(planStepWrapper.voltageArr[0]).style("horizontalAlignment", "right");
@@ -342,21 +346,33 @@ const addChargeStepFromPlan = (stepIndex, planStepWrapper, testData, rowNumber, 
 
 	rowNumber++;
 	reportSheet.cell(`D${rowNumber}`).value(generalConsts.maxTime);
-	reportSheet.cell(`E${rowNumber}`).value(planStep.maxTime).style("horizontalAlignment", "right");
+	if (planStep.isMaxTime === false) {
+		reportSheet.cell(`E${rowNumber}`).value(' ').style("horizontalAlignment", "right");
+	} else {
+		reportSheet.cell(`E${rowNumber}`).value(planStep.maxTime).style("horizontalAlignment", "right");
+	}
 	reportSheet.cell(`H${rowNumber}`).value(generalConsts.endVoltage);
 	reportSheet.cell(`I${rowNumber}`).value(planStepWrapper.voltageArr[planStepWrapper.voltageArr.length - 1]).style("horizontalAlignment", "right");
 	reportSheet.cell(`J${rowNumber}`).value('V');
 
 	rowNumber++;
 	reportSheet.cell(`D${rowNumber}`).value(generalConsts.cutOffCurrent);
-	reportSheet.cell(`E${rowNumber}`).value(splitUnitVariants(planStep.cutOffCurrent).first).style("horizontalAlignment", "right");
+	if (planStep.isCutOffCurrent === false) {
+		reportSheet.cell(`E${rowNumber}`).value(' ').style("horizontalAlignment", "right");
+	} else {
+	    reportSheet.cell(`E${rowNumber}`).value(splitUnitVariants(planStep.cutOffCurrent).first).style("horizontalAlignment", "right");
+	}
 	reportSheet.cell(`F${rowNumber}`).value(splitUnitVariants(planStep.cutOffCurrent).second);
 	reportSheet.cell(`H${rowNumber}`).value(generalConsts.endTemperature);
 	reportSheet.cell(`I${rowNumber}`).value(planStepWrapper.temperatureArr[planStepWrapper.temperatureArr.length - 1]).style("horizontalAlignment", "right").style("numberFormat", "0.00");
 	reportSheet.cell(`J${rowNumber}`).value('°C');
 
 	rowNumber++;
-	reportSheet.cell(`D${rowNumber}`).value(generalConsts.chargeLimit);
+	if (planStep.isChargeLimit === false) {
+		reportSheet.cell(`E${rowNumber}`).value(' ').style("horizontalAlignment", "right");
+	} else {
+	    reportSheet.cell(`D${rowNumber}`).value(generalConsts.chargeLimit);
+	}
 	reportSheet.cell(`E${rowNumber}`).value(splitUnitVariants(planStep.chargeLimit).first).style("horizontalAlignment", "right");
 	reportSheet.cell(`F${rowNumber}`).value(splitUnitVariants(planStep.chargeLimit).second);
 
@@ -407,7 +423,11 @@ const addDischargeStepFromPlan = (stepIndex, planStepWrapper, testData, rowNumbe
 
 	rowNumber++;
 	reportSheet.cell(`D${rowNumber}`).value(generalConsts.minTemperature);
+	if (planStep.isMinTemp === false) {
+	    reportSheet.cell(`E${rowNumber}`).value(' ').style("horizontalAlignment", "right");
+	} else {
 	reportSheet.cell(`E${rowNumber}`).value(planStep.minTemp).style("horizontalAlignment", "right").style("numberFormat", "0.00");
+	}
 	reportSheet.cell(`F${rowNumber}`).value('°C');
 	reportSheet.cell(`H${rowNumber}`).value(generalConsts.dischargeEnergy);
 	reportSheet.cell(`I${rowNumber}`).value(Math.abs(planStepWrapper.energySum / 3600)).style("horizontalAlignment", "right").style("numberFormat", "0.000");
@@ -419,7 +439,11 @@ const addDischargeStepFromPlan = (stepIndex, planStepWrapper, testData, rowNumbe
 
 	rowNumber++;
 	reportSheet.cell(`D${rowNumber}`).value(generalConsts.maxTermperature);
-	reportSheet.cell(`E${rowNumber}`).value(planStep.maxTemp).style("horizontalAlignment", "right").style("numberFormat", "0.00");
+	if (planStep.isMaxTime === false) {
+		reportSheet.cell(`E${rowNumber}`).value(' ').style("horizontalAlignment", "right");
+	} else {
+	    reportSheet.cell(`E${rowNumber}`).value(planStep.maxTemp).style("horizontalAlignment", "right").style("numberFormat", "0.00");
+	}
 	reportSheet.cell(`F${rowNumber}`).value('°C');
 	reportSheet.cell(`H${rowNumber}`).value(generalConsts.duration);
 	reportSheet.cell(`I${rowNumber}`).value(planStepWrapper.timestampArr[planStepWrapper.timestampArr.length - 1] - planStepWrapper.timestampArr[0]).style("horizontalAlignment", "right");
@@ -427,13 +451,21 @@ const addDischargeStepFromPlan = (stepIndex, planStepWrapper, testData, rowNumbe
 
 	rowNumber++;
 	reportSheet.cell(`D${rowNumber}`).value(generalConsts.maxTime);
-	reportSheet.cell(`E${rowNumber}`).value(planStep.maxTime).style("horizontalAlignment", "right");
+	if (planStep.isMaxTime === false) {
+	    reportSheet.cell(`E${rowNumber}`).value('0').style("horizontalAlignment", "right");
+	} else {
+	    reportSheet.cell(`E${rowNumber}`).value(planStep.maxTime).style("horizontalAlignment", "right");
+	}
 	reportSheet.cell(`H${rowNumber}`).value(generalConsts.initialVoltage);
 	reportSheet.cell(`I${rowNumber}`).value(planStepWrapper.voltageArr[0]).style("horizontalAlignment", "right");
 	reportSheet.cell(`J${rowNumber}`).value('V');
 
 	rowNumber++;
-	reportSheet.cell(`D${rowNumber}`).value(generalConsts.cutOffVoltage);
+	if (planStep.isCutOffVoltage === false) {
+		reportSheet.cell(`E${rowNumber}`).value(' ').style("horizontalAlignment", "right");
+	} else {
+	    reportSheet.cell(`D${rowNumber}`).value(generalConsts.cutOffVoltage);
+	}
 	reportSheet.cell(`E${rowNumber}`).value(planStep.cutOffVoltage).style("horizontalAlignment", "right");
 	reportSheet.cell(`F${rowNumber}`).value('V');
 	reportSheet.cell(`H${rowNumber}`).value(generalConsts.midPointVoltage);
@@ -441,7 +473,11 @@ const addDischargeStepFromPlan = (stepIndex, planStepWrapper, testData, rowNumbe
 	reportSheet.cell(`J${rowNumber}`).value('V');
 
 	rowNumber++;
-	reportSheet.cell(`D${rowNumber}`).value(generalConsts.disChargeLimit);
+	if (planStep.isDischargeLimit === false) {
+		reportSheet.cell(`E${rowNumber}`).value(' ').style("horizontalAlignment", "right");
+	} else {
+	    reportSheet.cell(`D${rowNumber}`).value(generalConsts.disChargeLimit);
+	}
 	reportSheet.cell(`E${rowNumber}`).value(splitUnitVariants(planStep.dischargeLimit).first).style("horizontalAlignment", "right");
 	reportSheet.cell(`F${rowNumber}`).value(splitUnitVariants(planStep.dischargeLimit).second);
 	reportSheet.cell(`H${rowNumber}`).value(generalConsts.endVoltage);
