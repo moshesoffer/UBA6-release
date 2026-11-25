@@ -317,7 +317,7 @@ const addChargeStepFromPlan = (stepIndex, planStepWrapper, testData, rowNumber, 
 	reportSheet.cell(`E${rowNumber}`).value(splitUnitVariants(planStep.chargeCurrent).first).style("horizontalAlignment", "right").style("numberFormat", "0.000");
 	reportSheet.cell(`F${rowNumber}`).value(splitUnitVariants(planStep.chargeCurrent).second);
 	reportSheet.cell(`H${rowNumber}`).value(generalConsts.chargeEnergy);
-	reportSheet.cell(`I${rowNumber}`).value(planStepWrapper.energySum / 3600).style("horizontalAlignment", "right").style("numberFormat", "0.000");
+	reportSheet.cell(`I${rowNumber}`).value(planStepWrapper.energySum / 3600 / 1000/*[Wh]*/).style("horizontalAlignment", "right").style("numberFormat", "0.000");
 	reportSheet.cell(`J${rowNumber}`).value('Wh');
 
 	rowNumber++;
@@ -430,7 +430,7 @@ const addDischargeStepFromPlan = (stepIndex, planStepWrapper, testData, rowNumbe
 	}
 	reportSheet.cell(`F${rowNumber}`).value('°C');
 	reportSheet.cell(`H${rowNumber}`).value(generalConsts.dischargeEnergy);
-	reportSheet.cell(`I${rowNumber}`).value(Math.abs(planStepWrapper.energySum / 3600)).style("horizontalAlignment", "right").style("numberFormat", "0.000");
+	reportSheet.cell(`I${rowNumber}`).value(Math.abs(planStepWrapper.energySum / 3600 / 1000/*[Wh]*/)).style("horizontalAlignment", "right").style("numberFormat", "0.000");
 	reportSheet.cell(`J${rowNumber}`).value('Wh');
 
 	rowNumber++;
